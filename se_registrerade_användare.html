@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrerade användare</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .users-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #000000;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            color: white;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="users-container">
+        <h2>Registrerade användare</h2>
+        <ul>
+            <!-- Här läggs användarnamn och lösenord till dynamiskt med JavaScript -->
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var users = JSON.parse(localStorage.getItem("users")) || [];
+
+            var usersList = document.querySelector("ul");
+            users.forEach(function (user) {
+                var listItem = document.createElement("li");
+                listItem.textContent = "Användarnamn: " + user.username + ", Lösenord: " + user.password;
+                usersList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+
+</html>

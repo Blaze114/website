@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Välkommen</title>
+    <link rel="stylesheet" type="text/css" href="index_style.css">
+    <script type="text/javascript" src="function.js"></script>
+    <style>
+        body {
+            background-image: url(mountain.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #welcome {
+            font-size: 36px;
+            margin: 0;
+        }
+        .made-by-blaze {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 12px;
+            color: green; /* Ändra färgen till grön */
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        .button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #005bff;
+            letter-spacing: 0em;
+            box-shadow: 0 0 30px var(--clr);
+        }
+    </style>
+
+    <script>
+        function loggain() {
+            window.location.href = "logga_in.html"
+        }
+
+        function registrera() {
+            window.location.href = "registrera.html"
+        }
+    </script>
+</head>
+<body>
+    <div class="made-by-blaze" style="color: green;">Gjord av Blaze</div>
+    <div id="welcome">
+        <h1>Välkommen</h1>
+    </div>
+    <div class="button-container">
+        <button type="button" class="button" style="--clr:#1e9bff" onclick="loggain()">Logga in</button>
+        <button type="button" class="button" style="--clr:#1e9bff" onclick="registrera()">Registrera</button>
+        <button type="button" class="btn7" style="--clr:#1e9bff" onclick="se_registrerade()"></button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.btn7 {
+    position: absolute; /* Positionera knappen absolut */
+    top: 893px; /* Placera knappen 10px från toppen */
+    left: 10px; /* Placera knappen 10px från vänster */
+    width: 50px; /* Ange bredden på knappen */
+    height: 50px; /* Ange höjden på knappen */
+    border: none; /* Ta bort gränslinjen från knappen */
+    border-radius: 50%; /* Gör knappen rund genom att använda border-radius */
+    background-color: #0550f1; /* Ange bakgrundsfärgen på knappen */
+    color: rgb(255, 255, 255); /* Ange textfärgen till vit */
+    font-size: 16px; /* Ange fontstorleken */
+    cursor: pointer; /* Ändra pekaren till en handpekare när användaren hovrar över knappen */
+    padding: 8px 16px;
+    background-color: #000000;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 0px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    cursor: none;
+}

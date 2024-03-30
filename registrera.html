@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registrera</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="function.js"></script>
+    <style type="text/css">
+        /* Din befintliga CSS-stilar */
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Registrera</h2>
+        <form id="register-form">
+            <!-- Uppdaterad platsanteckning för användare -->
+            <input type="email" name="username" id="username" placeholder="E-post" required>
+            <input type="password" name="password" id="password" placeholder="Lösenord" required>
+            <button type="button" class="btn2" style="--clr:#1e9bff" onclick="register()">Registrera</button>
+            <button type="button" class="btn1" style="--clr:#1e9bff" onclick="tillbaka()">Tillbaka</button>
+        </form>
+    </div>
+
+    <script>
+        function isValidEmail(email) {
+            // Regex för att validera e-postadresser
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        function register() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var users = JSON.parse(localStorage.getItem("users")) || [];
+
+            // Kontrollera om användarnamnet redan finns
+            var existingUser = users.find(user => user.username === username);
+            if (existingUser) {
+                alert("Användarnamnet finns redan. Vänligen välj ett annat.");
+                return;
+            }
+
+            // Validera e-postadress
+            if (!isValidEmail(username)) {
+                alert("E-posten är inte giltig. Vänligen ange en giltig e-postadress.");
+                return;
+            }
+
+            // Lägg till det nya användarkontot
+            users.push({ username: username, password: password });
+            localStorage.setItem("users", JSON.stringify(users));
+
+            // Skicka användaren till en annan sida för att visa registrerade användare
+            window.location.href = "registered_users.html";
+        }
+
+        function tillbaka() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

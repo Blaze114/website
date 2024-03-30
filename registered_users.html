@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registrerade Användare</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        /* Din befintliga CSS-stilar */
+    </style>
+</head>
+<body>
+    <div class="registered-users-container">
+        <h2>Registrerade Användare</h2>
+        <ul id="user-list"></ul>
+    </div>
+
+    <script>
+        // Ladda användarinformationen från localStorage
+        var users = JSON.parse(localStorage.getItem("users")) || [];
+        var userList = document.getElementById("user-list");
+
+        // Visa varje användare på sidan
+        users.forEach(function(user) {
+            var listItem = document.createElement("li");
+            listItem.textContent = "Användarnamn: " + user.username + ", Lösenord: " + user.password;
+            userList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
